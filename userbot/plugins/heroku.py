@@ -12,7 +12,7 @@ import requests
 
 from userbot.utils import friday_on_cmd
 from userbot.utils import edit_or_reply
-from userbot.utils import sudo_cmd
+from userbot.utils import friday_sudo_cmd
 
 Heroku = heroku3.from_key(Var.HEROKU_API_KEY)
 heroku_api = "https://api.heroku.com"
@@ -22,7 +22,7 @@ heroku_api = "https://api.heroku.com"
     friday_on_cmd(pattern=r"(set|get|del) var(?: |$)(.*)(?: |$)([\s\S]*)",
               outgoing=True))
 @friday.on(
-    sudo_cmd(pattern=r"(set|get|del) var(?: |$)(.*)(?: |$)([\s\S]*)",
+    friday_sudo_cmd(pattern=r"(set|get|del) var(?: |$)(.*)(?: |$)([\s\S]*)",
              allow_sudo=True))
 async def variable(var):
     """
@@ -117,7 +117,7 @@ async def variable(var):
 
 
 @friday.on(friday_on_cmd(pattern="usage$", outgoing=True))
-@friday.on(sudo_cmd(pattern="usage$", allow_sudo=True))
+@friday.on(friday_sudo_cmd(pattern="usage$", allow_sudo=True))
 async def dyno_usage(dyno):
     """
     Get your account Dyno Usage
@@ -199,7 +199,7 @@ def prettyjson(obj, indent=2, maxlinelength=80):
 
 
 @friday.on(friday_on_cmd(pattern="logs$", outgoing=True))
-@friday.on(sudo_cmd(pattern="logs$", allow_sudo=True))
+@friday.on(friday_sudo_cmd(pattern="logs$", allow_sudo=True))
 async def _(givelogs):
     try:
         Heroku = heroku3.from_key(Var.HEROKU_API_KEY)

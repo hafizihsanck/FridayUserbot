@@ -7,11 +7,11 @@ from googletrans import Translator
 
 from userbot.utils import friday_on_cmd
 from userbot.utils import edit_or_reply
-from userbot.utils import sudo_cmd
+from userbot.utils import friday_sudo_cmd
 
 
 @friday.on(friday_on_cmd("tr ?(.*)"))
-@friday.on(sudo_cmd("tr ?(.*)", allow_sudo=True))
+@friday.on(friday_sudo_cmd("tr ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return

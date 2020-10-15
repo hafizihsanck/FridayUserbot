@@ -7,7 +7,7 @@ from datetime import datetime
 
 import requests
 from uniborg.util import friday_on_cmd
-from uniborg.util import sudo_cmd
+from uniborg.util import friday_sudo_cmd
 
 logging.basicConfig(
     format="[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s",
@@ -20,7 +20,7 @@ def progress(current, total):
 
 
 @friday.on(friday_on_cmd("paste ?(.*)"))
-@friday.on(sudo_cmd("paste ?(.*)", allow_sudo=True))
+@friday.on(friday_sudo_cmd("paste ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return

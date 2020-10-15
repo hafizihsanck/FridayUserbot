@@ -6,11 +6,11 @@ Available Commands:
 .unshort <short url>"""
 import requests
 
-from userbot.utils import friday_on_cmd, edit_or_reply, sudo_cmd
+from userbot.utils import friday_on_cmd, edit_or_reply, friday_sudo_cmd
 
 
 @friday.on(friday_on_cmd("dns (.*)"))
-@friday.on(sudo_cmd("dns (.*)", allow_sudo=True))
+@friday.on(friday_sudo_cmd("dns (.*)", allow_sudo=True))
 async def _(event):
     starky = await edit_or_reply(event, "Processing.....")
     if event.fwd_from:
@@ -25,7 +25,7 @@ async def _(event):
 
 
 @friday.on(friday_on_cmd("url (.*)"))
-@friday.on(sudo_cmd("dns (.*)", allow_sudo=True))
+@friday.on(friday_sudo_cmd("dns (.*)", allow_sudo=True))
 async def _(event):
     starkxd = await edit_or_reply(event, "Processing....")
     if event.fwd_from:

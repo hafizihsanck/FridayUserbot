@@ -31,7 +31,7 @@ from userbot import CMD_HELP
 from userbot.utils import friday_on_cmd
 from userbot.utils import errors_handler
 from userbot.utils import register
-from userbot.utils import sudo_cmd
+from userbot.utils import friday_sudo_cmd
 
 # =================== CONSTANT ===================
 PP_TOO_SMOL = "`The image is too small`"
@@ -78,7 +78,7 @@ UNMUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=False)
 
 
 @friday.on(friday_on_cmd(pattern=r"setgpic"))
-@friday.on(sudo_cmd(pattern=r"setgpic", allow_sudo=True))
+@friday.on(friday_sudo_cmd(pattern=r"setgpic", allow_sudo=True))
 @errors_handler
 async def set_group_photo(gpic):
     """ For .setgpic command, changes the picture of a group """
@@ -117,7 +117,7 @@ async def set_group_photo(gpic):
 
 
 @friday.on(friday_on_cmd(pattern=r"promote(?: |$)(.*)"))
-@friday.on(sudo_cmd(pattern=r"promote(?: |$)(.*)", allow_sudo=True))
+@friday.on(friday_sudo_cmd(pattern=r"promote(?: |$)(.*)", allow_sudo=True))
 @errors_handler
 async def promote(promt):
     """ For .promote command, promotes the replied/tagged person """

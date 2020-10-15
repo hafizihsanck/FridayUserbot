@@ -12,7 +12,7 @@ from requests import get
 from .. import CMD_HELP
 from ..utils import friday_on_cmd
 from ..utils import edit_or_reply
-from ..utils import sudo_cmd
+from ..utils import friday_sudo_cmd
 
 GITHUB = "https://github.com"
 DEVICES_DATA = ("https://raw.githubusercontent.com/androidtrackers/"
@@ -20,7 +20,7 @@ DEVICES_DATA = ("https://raw.githubusercontent.com/androidtrackers/"
 
 
 @friday.on(friday_on_cmd(outgoing=True, pattern="magisk$"))
-@friday.on(sudo_cmd(pattern="magisk$", allow_sudo=True))
+@friday.on(friday_sudo_cmd(pattern="magisk$", allow_sudo=True))
 async def magisk(request):
     """ magisk latest releases """
     magisk_dict = {
@@ -44,7 +44,7 @@ async def magisk(request):
 
 
 @friday.on(friday_on_cmd(outgoing=True, pattern=r"device(?: |$)(\S*)"))
-@friday.on(sudo_cmd(pattern=r"device(?: |$)(\S*)", allow_sudo=True))
+@friday.on(friday_sudo_cmd(pattern=r"device(?: |$)(\S*)", allow_sudo=True))
 async def device_info(request):
     """ get android device basic info from its codename """
     textx = await request.get_reply_message()
@@ -74,7 +74,7 @@ async def device_info(request):
 @friday.on(
     friday_on_cmd(outgoing=True, pattern=r"codename(?: |)([\S]*)(?: |)([\s\S]*)"))
 @friday.on(
-    sudo_cmd(pattern=r"codename(?: |)([\S]*)(?: |)([\s\S]*)", allow_sudo=True))
+    friday_sudo_cmd(pattern=r"codename(?: |)([\S]*)(?: |)([\s\S]*)", allow_sudo=True))
 async def codename_info(request):
     """ search for android codename """
     textx = await request.get_reply_message()
@@ -116,7 +116,7 @@ async def codename_info(request):
 @friday.on(friday_on_cmd(outgoing=True,
                    pattern=r"specs(?: |)([\S]*)(?: |)([\s\S]*)"))
 @friday.on(
-    sudo_cmd(pattern=r"specs(?: |)([\S]*)(?: |)([\s\S]*)", allow_sudo=True))
+    friday_sudo_cmd(pattern=r"specs(?: |)([\S]*)(?: |)([\s\S]*)", allow_sudo=True))
 async def devices_specifications(request):
     """ Mobile devices specifications """
     textx = await request.get_reply_message()
@@ -173,7 +173,7 @@ async def devices_specifications(request):
 
 
 @friday.on(friday_on_cmd(outgoing=True, pattern=r"twrp(?: |$)(\S*)"))
-@friday.on(sudo_cmd(pattern=r"twrp(?: |$)(\S*)", allow_sudo=True))
+@friday.on(friday_sudo_cmd(pattern=r"twrp(?: |$)(\S*)", allow_sudo=True))
 async def twrp(request):
     """ get android device twrp """
     textx = await request.get_reply_message()

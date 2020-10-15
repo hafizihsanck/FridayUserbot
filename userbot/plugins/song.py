@@ -17,7 +17,7 @@ from userbot import bot
 from userbot import CMD_HELP
 from userbot.events import register
 from userbot.utils import friday_on_cmd
-from userbot.utils import sudo_cmd
+from userbot.utils import friday_sudo_cmd
 
 try:
     import subprocess

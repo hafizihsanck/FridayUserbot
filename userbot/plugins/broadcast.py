@@ -14,7 +14,7 @@ import asyncio
 from telethon.tl.types import InputMediaUploadedPhoto
 from uniborg.util import friday_on_cmd
 from uniborg.util import edit_or_reply
-from uniborg.util import sudo_cmd
+from uniborg.util import friday_sudo_cmd
 
 from userbot.plugins.sql_helper.broadcast_sql import add_channel
 from userbot.plugins.sql_helper.broadcast_sql import get_all_channels
@@ -26,7 +26,7 @@ logs_id = Var.PRIVATE_GROUP_ID
 
 
 @friday.on(friday_on_cmd("bforward ?(.*)"))
-@friday.on(sudo_cmd("bforward ?(.*)", allow_sudo=True))
+@friday.on(friday_sudo_cmd("bforward ?(.*)", allow_sudo=True))
 async def forw(event):
     if event.fwd_from:
         return
@@ -77,7 +77,7 @@ async def forw(event):
 
 
 @friday.on(friday_on_cmd("broadcast ?(.*)"))
-@friday.on(sudo_cmd("broadcast ?(.*)", allow_sudo=True))
+@friday.on(friday_sudo_cmd("broadcast ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -195,7 +195,7 @@ async def _(event):
 
 
 @friday.on(friday_on_cmd("badd ?(.*)"))
-@friday.on(sudo_cmd("badd ?(.*)", allow_sudo=True))
+@friday.on(friday_sudo_cmd("badd ?(.*)", allow_sudo=True))
 async def add_ch(event):
     if event.fwd_from:
         return
@@ -231,7 +231,7 @@ async def add_ch(event):
 
 
 @friday.on(friday_on_cmd("brm ?(.*)"))
-@friday.on(sudo_cmd("brm ?(.*)", allow_sudo=True))
+@friday.on(friday_sudo_cmd("brm ?(.*)", allow_sudo=True))
 async def remove_ch(event):
     if event.fwd_from:
         return
@@ -262,7 +262,7 @@ async def remove_ch(event):
 
 
 @friday.on(friday_on_cmd("listchannels"))
-@friday.on(sudo_cmd("listchannels", allow_sudo=True))
+@friday.on(friday_sudo_cmd("listchannels", allow_sudo=True))
 async def list(event):
     if event.fwd_from:
         return

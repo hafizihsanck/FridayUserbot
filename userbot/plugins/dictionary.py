@@ -3,11 +3,11 @@ Syntax: .meaning <word>"""
 import requests
 from uniborg.util import friday_on_cmd
 from uniborg.util import edit_or_reply
-from uniborg.util import sudo_cmd
+from uniborg.util import friday_sudo_cmd
 
 
 @friday.on(friday_on_cmd("meaning (.*)"))
-@friday.on(sudo_cmd("meaning (.*)", allow_sudo=True))
+@friday.on(friday_sudo_cmd("meaning (.*)", allow_sudo=True))
 async def _(event):
     stark = await edit_or_reply(event, "Finding Meaning.....")
     if event.fwd_from:

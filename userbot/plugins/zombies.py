@@ -15,7 +15,7 @@ from telethon.tl.functions.channels import EditBannedRequest
 from telethon.tl.types import ChatBannedRights
 
 from userbot import CMD_HELP
-from userbot.utils import friday_on_cmd, sudo_cmd
+from userbot.utils import friday_on_cmd, friday_sudo_cmd
 
 #
 BOTLOG = True
@@ -118,7 +118,7 @@ async def rm_deletedacc(show):
         )
 
 
-@friday.on(sudo_cmd(pattern="zombies ?(.*)", allow_sudo=True))
+@friday.on(friday_sudo_cmd(pattern="zombies ?(.*)", allow_sudo=True))
 async def rm_deletedacc(show):
     if show.fwd_from:
         return
