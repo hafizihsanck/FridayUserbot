@@ -10,7 +10,7 @@ from PIL import ImageDraw
 from PIL import ImageFont
 
 from userbot.utils import friday_on_cmd
-from userbot.utils import friday_sudo_cmd
+from userbot.utils import friday_friday_sudo_cmd
 from var import Var
 
 # how a lazy guy ports.

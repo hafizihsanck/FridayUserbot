@@ -10,11 +10,11 @@ import barcode
 from barcode.writer import ImageWriter
 from uniborg.util import friday_on_cmd
 from uniborg.util import edit_or_reply
-from uniborg.util import friday_sudo_cmd
+from uniborg.util import friday_friday_sudo_cmd
 
 
 @friday.on(friday_on_cmd(pattern="barcode ?(.*)"))
-@friday.on(friday_sudo_cmd(pattern="barcode ?(.*)", allow_sudo=True))
+@friday.on(friday_friday_sudo_cmd(pattern="barcode ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return

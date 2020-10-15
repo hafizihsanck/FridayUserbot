@@ -13,7 +13,7 @@ from PIL import ImageFont
 from telethon.tl.types import InputMessagesFilterDocument
 
 from userbot.utils import friday_on_cmd
-from userbot.utils import friday_sudo_cmd
+from userbot.utils import friday_friday_sudo_cmd
 
 # RegEx by https://t.me/c/1220993104/500653 ( @SnapDragon7410 )
 
@@ -76,7 +76,7 @@ async def sticklet(event):
         pass
 
 
-@friday.on(friday_sudo_cmd(pattern=r"stcr ?(?:(.*?) \| )?(.*)", allow_sudo=True))
+@friday.on(friday_friday_sudo_cmd(pattern=r"stcr ?(?:(.*?) \| )?(.*)", allow_sudo=True))
 async def sticklet(event):
     R = random.randint(0, 256)
     G = random.randint(0, 256)

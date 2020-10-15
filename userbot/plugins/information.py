@@ -10,11 +10,11 @@ from telethon.utils import get_input_location
 
 from userbot.utils import friday_on_cmd
 from userbot.utils import edit_or_reply
-from userbot.utils import friday_sudo_cmd
+from userbot.utils import friday_friday_sudo_cmd
 
 
 @friday.on(friday_on_cmd("info ?(.*)"))
-@friday.on(friday_sudo_cmd("info ?(.*)", allow_sudo=True))
+@friday.on(friday_friday_sudo_cmd("info ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return

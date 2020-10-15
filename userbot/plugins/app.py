@@ -9,11 +9,11 @@ import requests
 from .. import CMD_HELP
 from ..utils import friday_on_cmd
 from ..utils import edit_or_reply
-from ..utils import friday_sudo_cmd
+from ..utils import friday_friday_sudo_cmd
 
 
 @friday.on(friday_on_cmd(pattern="app (.*)"))
-@friday.on(friday_sudo_cmd(pattern="app (.*)", allow_sudo=True))
+@friday.on(friday_friday_sudo_cmd(pattern="app (.*)", allow_sudo=True))
 async def apk(event):
     app_name = event.pattern_match.group(1)
     event = await edit_or_reply(event, "Searching!")
@@ -56,7 +56,7 @@ async def apk(event):
 
 
 @friday.on(friday_on_cmd(pattern="appr (.*)"))
-@friday.on(friday_sudo_cmd(pattern="appr (.*)", allow_sudo=True))
+@friday.on(friday_friday_sudo_cmd(pattern="appr (.*)", allow_sudo=True))
 async def apkr(event):
     app_name = event.pattern_match.group(1)
     event = await edit_or_reply(event, "searching!")

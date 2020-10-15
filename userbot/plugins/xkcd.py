@@ -5,11 +5,11 @@ from urllib.parse import quote
 import requests
 from uniborg.util import friday_on_cmd
 from uniborg.util import edit_or_reply
-from uniborg.util import friday_sudo_cmd
+from uniborg.util import friday_friday_sudo_cmd
 
 
 @friday.on(friday_on_cmd(pattern="xkcd ?(.*)"))
-@friday.on(friday_sudo_cmd(pattern="xkcd ?(.*)", allow_sudo=True))
+@friday.on(friday_friday_sudo_cmd(pattern="xkcd ?(.*)", allow_sudo=True))
 async def _(event):
     livinglegend = await edit_or_reply(event, "Oh SeD Pls Wait")
     if event.fwd_from:

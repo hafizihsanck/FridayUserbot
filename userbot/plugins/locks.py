@@ -11,11 +11,11 @@ from userbot.plugins.sql_helper.locks_sql import is_locked
 from userbot.plugins.sql_helper.locks_sql import update_lock
 from userbot.utils import friday_on_cmd
 from userbot.utils import edit_or_reply
-from userbot.utils import friday_sudo_cmd
+from userbot.utils import friday_friday_sudo_cmd
 
 
 @friday.on(friday_on_cmd(r"lock( (?P<target>\S+)|$)"))
-@friday.on(friday_sudo_cmd(r"lock( (?P<target>\S+)|$)", allow_sudo=True))
+@friday.on(friday_friday_sudo_cmd(r"lock( (?P<target>\S+)|$)", allow_sudo=True))
 async def _(event):
     mrhackerguy = await edit_or_reply(event, "Processing")
     # Space weirdness in regex required because argument is optional and other
@@ -86,7 +86,7 @@ async def _(event):
 
 
 @friday.on(friday_on_cmd("unlock ?(.*)"))
-@friday.on(friday_sudo_cmd("unlock ?(.*)", allow_sudo=True))
+@friday.on(friday_friday_sudo_cmd("unlock ?(.*)", allow_sudo=True))
 async def _(event):
     starkgang = await edit_or_reply(event, "Processing")
     if event.fwd_from:

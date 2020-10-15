@@ -9,11 +9,11 @@ import traceback
 
 from uniborg.util import friday_on_cmd
 from uniborg.util import edit_or_reply
-from uniborg.util import friday_sudo_cmd
+from uniborg.util import friday_friday_sudo_cmd
 
 
 @friday.on(friday_on_cmd("eval"))
-@friday.on(friday_sudo_cmd("eval", allow_sudo=True))
+@friday.on(friday_friday_sudo_cmd("eval", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return

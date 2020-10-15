@@ -4,13 +4,13 @@ from datetime import datetime
 from pathlib import Path
 
 from userbot.utils import friday_on_cmd
-from userbot.utils import friday_sudo_cmd
+from userbot.utils import friday_friday_sudo_cmd
 
 fridaythumb = "./resources/IMG_20200929_103719_628.jpg"
 
 
 @friday.on(friday_on_cmd(pattern="send ?(.*)"))
-@friday.on(friday_sudo_cmd(pattern="send ?(.*)", allow_sudo=True))
+@friday.on(friday_friday_sudo_cmd(pattern="send ?(.*)", allow_sudo=True))
 async def send(event):
     if event.fwd_from:
         return

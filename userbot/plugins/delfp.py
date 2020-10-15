@@ -1,10 +1,10 @@
 from telethon.tl.functions.photos import DeletePhotosRequest, GetUserPhotosRequest
 from telethon.tl.types import InputPhoto
-from uniborg.util import friday_on_cmd, edit_or_reply, friday_sudo_cmd
+from uniborg.util import friday_on_cmd, edit_or_reply, friday_friday_sudo_cmd
 
 
 @friday.on(friday_on_cmd(pattern="delpfp ?(.*)"))
-@friday.on(friday_sudo_cmd(pattern="delpfp ?(.*)", allow_sudo=True))
+@friday.on(friday_friday_sudo_cmd(pattern="delpfp ?(.*)", allow_sudo=True))
 async def remove_profilepic(delpfp):
     """ For .delpfp command, delete your current profile picture in Telegram. """
     group = delpfp.text[8:]

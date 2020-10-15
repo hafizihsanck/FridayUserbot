@@ -6,7 +6,7 @@ from pathlib import Path
 from userbot.utils import friday_on_cmd
 from userbot.utils import load_module
 from userbot.utils import remove_plugin
-from userbot.utils import friday_sudo_cmd
+from userbot.utils import friday_friday_sudo_cmd
 
 
 @friday.on(friday_on_cmd(pattern="load ?(.*)", outgoing=True))

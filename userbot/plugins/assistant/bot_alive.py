@@ -18,7 +18,7 @@ from telethon.tl.types import User
 from telethon.utils import get_display_name
 from telethon.utils import pack_bot_file_id
 from uniborg.util import friday_on_cmd
-from uniborg.util import friday_sudo_cmd
+from uniborg.util import friday_friday_sudo_cmd
 
 from userbot import ALIVE_NAME
 from userbot import bot
@@ -33,7 +33,7 @@ from userbot.plugins.sql_helper.idadder_sql import get_all_users
 from userbot.uniborgConfig import Config
 from userbot.utils import friday_on_cmd
 from userbot.utils import edit_or_reply
-from userbot.utils import friday_sudo_cmd
+from userbot.utils import friday_friday_sudo_cmd
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Unknown"
 PM_IMG = "https://telegra.ph/file/22535f8051a58af113586.jpg"
