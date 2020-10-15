@@ -3,10 +3,10 @@ import sys
 from telethon import __version__
 from telethon import functions
 
-from userbot.utils import admin_cmd
+from userbot.utils import friday_on_cmd
 
 
-@friday.on(admin_cmd(pattern="mf ?(.*)", allow_sudo=True))  # pylint:disable=E0602
+@friday.on(friday_on_cmd(pattern="mf ?(.*)", allow_sudo=True))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
         return
@@ -55,7 +55,7 @@ async def _(event):
         await event.delete()
 
 
-@friday.on(admin_cmd(pattern="dc"))  # pylint:disable=E0602
+@friday.on(friday_on_cmd(pattern="dc"))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
         return
@@ -63,7 +63,7 @@ async def _(event):
     await event.edit(result.stringify())
 
 
-@friday.on(admin_cmd(pattern="config"))  # pylint:disable=E0602
+@friday.on(friday_on_cmd(pattern="config"))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
         return

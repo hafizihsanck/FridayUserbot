@@ -3,12 +3,12 @@ from datetime import datetime
 from telethon.tl.types import Channel
 from telethon.tl.types import Chat
 from telethon.tl.types import User
-from uniborg.util import admin_cmd
+from uniborg.util import friday_on_cmd
 
 from userbot import bot
 
 
-@bot.on(admin_cmd(pattern=r"stats"))
+@bot.on(friday_on_cmd(pattern=r"stats"))
 async def _(event):
     if event.fwd_from:
         return

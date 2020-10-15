@@ -1,6 +1,6 @@
 from userbot import topfunc
 from userbot.uniborgConfig import Config
-from userbot.utils import admin_cmd
+from userbot.utils import friday_on_cmd
 from var import Var
 
 idgen = topfunc.id_generator

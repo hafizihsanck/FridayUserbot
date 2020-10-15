@@ -20,7 +20,7 @@ from telethon.tl.types import User
 from telethon.utils import get_display_name
 
 from userbot.uniborgConfig import Config
-from userbot.utils import admin_cmd
+from userbot.utils import friday_on_cmd
 from userbot.utils import edit_or_reply
 from userbot.utils import sudo_cmd
 

@@ -3,7 +3,7 @@ import os
 from datetime import datetime
 from pathlib import Path
 
-from userbot.utils import admin_cmd
+from userbot.utils import friday_on_cmd
 from userbot.utils import edit_or_reply
 from userbot.utils import load_module
 from userbot.utils import remove_plugin
@@ -12,7 +12,7 @@ from userbot.utils import sudo_cmd
 DELETE_TIMEOUT = 5
 
 
-@friday.on(admin_cmd(pattern="install", outgoing=True))
+@friday.on(friday_on_cmd(pattern="install", outgoing=True))
 async def install(event):
     if event.fwd_from:
         return

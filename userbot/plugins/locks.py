@@ -9,12 +9,12 @@ from telethon import types
 from userbot.plugins.sql_helper.locks_sql import get_locks
 from userbot.plugins.sql_helper.locks_sql import is_locked
 from userbot.plugins.sql_helper.locks_sql import update_lock
-from userbot.utils import admin_cmd
+from userbot.utils import friday_on_cmd
 from userbot.utils import edit_or_reply
 from userbot.utils import sudo_cmd
 
 
-@friday.on(admin_cmd(r"lock( (?P<target>\S+)|$)"))
+@friday.on(friday_on_cmd(r"lock( (?P<target>\S+)|$)"))
 @friday.on(sudo_cmd(r"lock( (?P<target>\S+)|$)", allow_sudo=True))
 async def _(event):
     mrhackerguy = await edit_or_reply(event, "Processing")
@@ -85,7 +85,7 @@ async def _(event):
             )
 
 
-@friday.on(admin_cmd("unlock ?(.*)"))
+@friday.on(friday_on_cmd("unlock ?(.*)"))
 @friday.on(sudo_cmd("unlock ?(.*)", allow_sudo=True))
 async def _(event):
     starkgang = await edit_or_reply(event, "Processing")
@@ -101,8 +101,8 @@ async def _(event):
             "Use `.lock` without any parameters to unlock API locks")
 
 
-@friday.on(admin_cmd("curenabledlocks"))
-@friday.on(admin_cmd("curenabledlocks", allow_sudo=True))
+@friday.on(friday_on_cmd("curenabledlocks"))
+@friday.on(friday_on_cmd("curenabledlocks", allow_sudo=True))
 async def _(event):
     pikachu = await edit_or_reply(event, "Processing")
     if event.fwd_from:

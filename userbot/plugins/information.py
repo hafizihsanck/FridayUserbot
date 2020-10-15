@@ -8,12 +8,12 @@ from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
 from telethon.utils import get_input_location
 
-from userbot.utils import admin_cmd
+from userbot.utils import friday_on_cmd
 from userbot.utils import edit_or_reply
 from userbot.utils import sudo_cmd
 
 
-@friday.on(admin_cmd("info ?(.*)"))
+@friday.on(friday_on_cmd("info ?(.*)"))
 @friday.on(sudo_cmd("info ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:

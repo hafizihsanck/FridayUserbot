@@ -8,7 +8,7 @@ import sys
 
 import git
 
-from userbot.utils import admin_cmd
+from userbot.utils import friday_on_cmd
 
 # -- Constants -- #
 IS_SELECTED_DIFFERENT_BRANCH = (
@@ -31,7 +31,7 @@ RESTARTING_APP = "re-starting heroku application"
 # -- Constants End -- #
 
 
-@friday.on(admin_cmd("update ?(.*)", outgoing=True))
+@friday.on(friday_on_cmd("update ?(.*)", outgoing=True))
 async def updater(message):
     try:
         repo = git.Repo()

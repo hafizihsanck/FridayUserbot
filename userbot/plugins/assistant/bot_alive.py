@@ -17,7 +17,7 @@ from telethon.tl.types import Chat
 from telethon.tl.types import User
 from telethon.utils import get_display_name
 from telethon.utils import pack_bot_file_id
-from uniborg.util import admin_cmd
+from uniborg.util import friday_on_cmd
 from uniborg.util import sudo_cmd
 
 from userbot import ALIVE_NAME
@@ -31,7 +31,7 @@ from userbot.plugins.sql_helper.botusers_sql import his_userid
 from userbot.plugins.sql_helper.idadder_sql import add_usersid_in_db
 from userbot.plugins.sql_helper.idadder_sql import get_all_users
 from userbot.uniborgConfig import Config
-from userbot.utils import admin_cmd
+from userbot.utils import friday_on_cmd
 from userbot.utils import edit_or_reply
 from userbot.utils import sudo_cmd
 

@@ -10,7 +10,7 @@ import os
 import heroku3
 import requests
 
-from userbot.utils import admin_cmd
+from userbot.utils import friday_on_cmd
 from userbot.utils import edit_or_reply
 from userbot.utils import sudo_cmd
 
@@ -19,7 +19,7 @@ heroku_api = "https://api.heroku.com"
 
 
 @friday.on(
-    admin_cmd(pattern=r"(set|get|del) var(?: |$)(.*)(?: |$)([\s\S]*)",
+    friday_on_cmd(pattern=r"(set|get|del) var(?: |$)(.*)(?: |$)([\s\S]*)",
               outgoing=True))
 @friday.on(
     sudo_cmd(pattern=r"(set|get|del) var(?: |$)(.*)(?: |$)([\s\S]*)",
@@ -116,7 +116,7 @@ async def variable(var):
             return await edit_or_reply(var, f"**{variable}**  `is not exists`")
 
 
-@friday.on(admin_cmd(pattern="usage$", outgoing=True))
+@friday.on(friday_on_cmd(pattern="usage$", outgoing=True))
 @friday.on(sudo_cmd(pattern="usage$", allow_sudo=True))
 async def dyno_usage(dyno):
     """
@@ -198,7 +198,7 @@ def prettyjson(obj, indent=2, maxlinelength=80):
     return indentitems(items, indent, level=0)
 
 
-@friday.on(admin_cmd(pattern="logs$", outgoing=True))
+@friday.on(friday_on_cmd(pattern="logs$", outgoing=True))
 @friday.on(sudo_cmd(pattern="logs$", allow_sudo=True))
 async def _(givelogs):
     try:

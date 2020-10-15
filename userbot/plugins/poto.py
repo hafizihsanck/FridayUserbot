@@ -3,7 +3,7 @@
 """
 import logging
 
-from userbot.utils import admin_cmd
+from userbot.utils import friday_on_cmd
 
 logger = logging.getLogger(__name__)
 
@@ -13,7 +13,7 @@ if 1 == 1:
 
     client = borg
 
-    @friday.on(admin_cmd(pattern="poto(.*)"))
+    @friday.on(friday_on_cmd(pattern="poto(.*)"))
     async def potocmd(event):
         """Gets the profile photos of replied users, channels or chats"""
 

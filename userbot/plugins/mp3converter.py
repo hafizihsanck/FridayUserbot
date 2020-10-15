@@ -5,11 +5,11 @@ import os
 import time
 from datetime import datetime
 
-from userbot.utils import admin_cmd
+from userbot.utils import friday_on_cmd
 from userbot.utils import progress
 
 
-@friday.on(admin_cmd(pattern="convert (.*)"))  # pylint:disable=E0602
+@friday.on(friday_on_cmd(pattern="convert (.*)"))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
         return

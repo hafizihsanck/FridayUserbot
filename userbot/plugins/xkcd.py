@@ -3,12 +3,12 @@ Syntax: .xkcd <search>"""
 from urllib.parse import quote
 
 import requests
-from uniborg.util import admin_cmd
+from uniborg.util import friday_on_cmd
 from uniborg.util import edit_or_reply
 from uniborg.util import sudo_cmd
 
 
-@friday.on(admin_cmd(pattern="xkcd ?(.*)"))
+@friday.on(friday_on_cmd(pattern="xkcd ?(.*)"))
 @friday.on(sudo_cmd(pattern="xkcd ?(.*)", allow_sudo=True))
 async def _(event):
     livinglegend = await edit_or_reply(event, "Oh SeD Pls Wait")

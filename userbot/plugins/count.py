@@ -9,14 +9,14 @@ from telethon.tl.types import Channel
 from telethon.tl.types import Chat
 from telethon.tl.types import User
 
-from userbot.utils import admin_cmd
+from userbot.utils import friday_on_cmd
 
 logging.basicConfig(
     format="[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s",
     level=logging.WARNING)
 logger = logging.getLogger(__name__)
 
-# @friday.on(admin_cmd(pattern="count"))
+# @friday.on(friday_on_cmd(pattern="count"))
 # async def _(event):
 #     if event.fwd_from:
 #         return
@@ -52,7 +52,7 @@ logger = logging.getLogger(__name__)
 # Bots:\t{}""".format(ms, u, g, c, bc, b))
 
 
-@friday.on(admin_cmd(pattern="count"))
+@friday.on(friday_on_cmd(pattern="count"))
 async def stats(event: NewMessage.Event,
                 ) -> None:  # pylint: disable = R0912, R0914, R0915
     """Command to get stats about the account"""

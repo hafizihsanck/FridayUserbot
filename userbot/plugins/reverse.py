@@ -14,7 +14,7 @@ from PIL import Image
 
 from userbot import bot
 from userbot import CMD_HELP
-from userbot.utils import admin_cmd
+from userbot.utils import friday_on_cmd
 from userbot.utils import errors_handler
 
 opener = urllib.request.build_opener()
@@ -22,7 +22,7 @@ useragent = "Mozilla/5.0 (Linux; Android 9; SM-G960F Build/PPR1.180610.011; wv) 
 opener.addheaders = [("User-agent", useragent)]
 
 
-@friday.on(admin_cmd(outgoing=True, pattern=r"reverse(?: |$)(\d*)"))
+@friday.on(friday_on_cmd(outgoing=True, pattern=r"reverse(?: |$)(\d*)"))
 @errors_handler
 async def okgoogle(img):
     """ For .reverse command, Google search images and stickers. """

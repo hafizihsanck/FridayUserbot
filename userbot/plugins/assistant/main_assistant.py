@@ -43,7 +43,7 @@ from userbot.plugins.sql_helper.idadder_sql import add_usersid_in_db
 from userbot.plugins.sql_helper.idadder_sql import already_added
 from userbot.plugins.sql_helper.idadder_sql import get_all_users
 from userbot.uniborgConfig import Config
-from userbot.utils import admin_cmd
+from userbot.utils import friday_on_cmd
 from userbot.utils import edit_or_reply
 from userbot.utils import sudo_cmd
 

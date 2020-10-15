@@ -9,7 +9,7 @@ from PIL import Image
 from PIL import ImageDraw
 from PIL import ImageFont
 
-from userbot.utils import admin_cmd
+from userbot.utils import friday_on_cmd
 from userbot.utils import sudo_cmd
 from var import Var
 
@@ -17,7 +17,7 @@ from var import Var
 client = borg
 
 
-@friday.on(admin_cmd("memify ?(.*)"))
+@friday.on(friday_on_cmd("memify ?(.*)"))
 async def handler(event):
     if event.fwd_from:
         return

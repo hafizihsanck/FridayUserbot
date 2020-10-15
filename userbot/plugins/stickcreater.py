@@ -12,13 +12,13 @@ from PIL import ImageDraw
 from PIL import ImageFont
 from telethon.tl.types import InputMessagesFilterDocument
 
-from userbot.utils import admin_cmd
+from userbot.utils import friday_on_cmd
 from userbot.utils import sudo_cmd
 
 # RegEx by https://t.me/c/1220993104/500653 ( @SnapDragon7410 )
 
 
-@friday.on(admin_cmd(pattern=r"stcr ?(?:(.*?) \| )?(.*)", outgoing=True))
+@friday.on(friday_on_cmd(pattern=r"stcr ?(?:(.*?) \| )?(.*)", outgoing=True))
 async def sticklet(event):
     R = random.randint(0, 256)
     G = random.randint(0, 256)

@@ -3,13 +3,13 @@ import os
 from datetime import datetime
 from pathlib import Path
 
-from userbot.utils import admin_cmd
+from userbot.utils import friday_on_cmd
 from userbot.utils import sudo_cmd
 
 fridaythumb = "./resources/IMG_20200929_103719_628.jpg"
 
 
-@friday.on(admin_cmd(pattern="send ?(.*)"))
+@friday.on(friday_on_cmd(pattern="send ?(.*)"))
 @friday.on(sudo_cmd(pattern="send ?(.*)", allow_sudo=True))
 async def send(event):
     if event.fwd_from:

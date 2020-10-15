@@ -11,7 +11,7 @@ import requests
 from bs4 import BeautifulSoup
 from google_images_download import google_images_download
 
-from userbot.utils import admin_cmd
+from userbot.utils import friday_on_cmd
 from userbot.utils import edit_or_reply
 from userbot.utils import sudo_cmd
 
@@ -21,7 +21,7 @@ def progress(current, total):
         current, total, (current / total) * 100))
 
 
-@friday.on(admin_cmd(pattern="search (.*)"))
+@friday.on(friday_on_cmd(pattern="search (.*)"))
 @friday.on(sudo_cmd(pattern="search (.*)", allow_sudo=True))
 async def _(event):
     stark = await edit_or_reply(event, "`Processing Your Request`")
@@ -54,7 +54,7 @@ async def _(event):
                      link_preview=False)
 
 
-@friday.on(admin_cmd(pattern="image (.*)"))
+@friday.on(friday_on_cmd(pattern="image (.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -98,7 +98,7 @@ async def _(event):
     await event.delete()
 
 
-@friday.on(admin_cmd(pattern="grs"))
+@friday.on(friday_on_cmd(pattern="grs"))
 async def _(event):
     if event.fwd_from:
         return

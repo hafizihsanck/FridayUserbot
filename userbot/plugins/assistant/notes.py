@@ -20,7 +20,7 @@ from userbot.plugins.sql_helper.snips_sql import get_all_snips
 from userbot.plugins.sql_helper.snips_sql import get_snips
 from userbot.plugins.sql_helper.snips_sql import remove_snip
 from userbot.uniborgConfig import Config
-from userbot.utils import admin_cmd
+from userbot.utils import friday_on_cmd
 from userbot.utils import edit_or_reply
 from userbot.utils import sudo_cmd
 

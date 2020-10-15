@@ -8,12 +8,12 @@ By:- @Zero_cool7870
 """
 import os
 
-from uniborg.util import admin_cmd
+from uniborg.util import friday_on_cmd
 from uniborg.util import edit_or_reply
 
 
-@friday.on(admin_cmd(pattern="ls ?(.*)"))
-@friday.on(admin_cmd(pattern="ls ?(.*)", allow_sudo=True))
+@friday.on(friday_on_cmd(pattern="ls ?(.*)"))
+@friday.on(friday_on_cmd(pattern="ls ?(.*)", allow_sudo=True))
 async def lst(event):
     genesis = await edit_or_reply(event, "Processing")
     if event.fwd_from:

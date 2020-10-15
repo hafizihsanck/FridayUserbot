@@ -16,7 +16,7 @@ from telethon.tl.functions.account import UpdateNotifySettingsRequest
 from userbot import bot
 from userbot import CMD_HELP
 from userbot.events import register
-from userbot.utils import admin_cmd
+from userbot.utils import friday_on_cmd
 from userbot.utils import sudo_cmd
 
 try:
@@ -34,7 +34,7 @@ def bruh(name):
     os.system("instantmusic -q -s " + name)
 
 
-@friday.on(admin_cmd(pattern="spd ?(.*)"))
+@friday.on(friday_on_cmd(pattern="spd ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -59,7 +59,7 @@ async def _(event):
         await bot.forward_messages(event.chat_id, respond.message)
 
 
-@friday.on(admin_cmd(pattern="netease ?(.*)"))
+@friday.on(friday_on_cmd(pattern="netease ?(.*)"))
 async def WooMai(netase):
     if netase.fwd_from:
         return
@@ -87,7 +87,7 @@ async def WooMai(netase):
     await netase.delete()
 
 
-@friday.on(admin_cmd(pattern="dzd ?(.*)"))
+@friday.on(friday_on_cmd(pattern="dzd ?(.*)"))
 async def DeezLoader(Deezlod):
     if Deezlod.fwd_from:
         return

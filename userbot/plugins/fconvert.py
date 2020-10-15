@@ -5,7 +5,7 @@ import os
 import time
 from datetime import datetime
 
-from userbot.utils import admin_cmd
+from userbot.utils import friday_on_cmd
 from userbot.utils import progress
 
 
@@ -65,7 +65,7 @@ def time_formatter(milliseconds: int) -> str:
     return tmp[:-2]
 
 
-@friday.on(admin_cmd(pattern="nfc (.*)"))  # pylint:disable=E0602
+@friday.on(friday_on_cmd(pattern="nfc (.*)"))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
         return

@@ -10,7 +10,7 @@ import os
 import time
 
 from telethon.tl.types import DocumentAttributeAudio
-from uniborg.util import admin_cmd
+from uniborg.util import friday_on_cmd
 from uniborg.util import edit_or_reply
 from uniborg.util import sudo_cmd
 from youtube_dl import YoutubeDL
@@ -80,7 +80,7 @@ def time_formatter(milliseconds: int) -> str:
     return tmp[:-2]
 
 
-@friday.on(admin_cmd(pattern="yt(a|v) (.*)"))
+@friday.on(friday_on_cmd(pattern="yt(a|v) (.*)"))
 @friday.on(sudo_cmd(pattern="yt(a|v) (.*)", allow_sudo=True))
 async def download_video(v_url):
     """ For .ytdl command, download media from YouTube and many other sites. """

@@ -8,7 +8,7 @@ import os
 
 from pySmartDL import SmartDL
 
-from userbot.utils import admin_cmd
+from userbot.utils import friday_on_cmd
 from userbot.utils import sudo_cmd
 
 STARK_HTTP = "https://api.proxyscrape.com/?request=getproxies&proxytype=http&timeout=10000&country=all&ssl=all&anonymity=all"
@@ -20,7 +20,7 @@ SOCKS5_TXT = "**Proxy Info** \nType: __SOCKS4__ \nTimeOut: __10000__ \nCountry: 
 sedpng = "https://soon.proxyscrape.com/asset/img/service/downloadicon.svg"
 
 
-@friday.on(admin_cmd(pattern="http$"))
+@friday.on(friday_on_cmd(pattern="http$"))
 @friday.on(sudo_cmd(pattern="http$", allow_sudo=True))
 async def starkxD(event):
     await event.get_chat()
@@ -40,8 +40,8 @@ async def starkxD(event):
     )
 
 
-@friday.on(admin_cmd(pattern="socks4$"))
-@friday.on(admin_cmd(pattern="socks4$", allow_sudo=True))
+@friday.on(friday_on_cmd(pattern="socks4$"))
+@friday.on(friday_on_cmd(pattern="socks4$", allow_sudo=True))
 async def starkgang(event):
     await event.get_chat()
     file_name = "proxy_socks4.txt"
@@ -62,8 +62,8 @@ async def starkgang(event):
     )
 
 
-@friday.on(admin_cmd(pattern="socks5$"))
-@friday.on(admin_cmd(pattern="socks5$", allow_sudo=True))
+@friday.on(friday_on_cmd(pattern="socks5$"))
+@friday.on(friday_on_cmd(pattern="socks5$", allow_sudo=True))
 async def friday(event):
     await event.get_chat()
     file_name = "proxy_socks5.txt"

@@ -9,7 +9,7 @@ from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
 from telethon.utils import get_input_location
 
-from userbot.utils import admin_cmd
+from userbot.utils import friday_on_cmd
 
 
 async def get_full_user(event):
@@ -53,7 +53,7 @@ async def get_user_from_id(user, event):
     return user_obj
 
 
-@friday.on(admin_cmd(pattern="gban ?(.*)"))
+@friday.on(friday_on_cmd(pattern="gban ?(.*)"))
 async def gspider(userbot):
     lol = userbot
     sender = await lol.get_sender()
@@ -121,7 +121,7 @@ async def gspider(userbot):
     )
 
 
-@friday.on(admin_cmd(pattern="ungban ?(.*)"))
+@friday.on(friday_on_cmd(pattern="ungban ?(.*)"))
 async def gspider(userbot):
     lol = userbot
     sender = await lol.get_sender()

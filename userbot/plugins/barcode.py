@@ -8,12 +8,12 @@ from datetime import datetime
 
 import barcode
 from barcode.writer import ImageWriter
-from uniborg.util import admin_cmd
+from uniborg.util import friday_on_cmd
 from uniborg.util import edit_or_reply
 from uniborg.util import sudo_cmd
 
 
-@friday.on(admin_cmd(pattern="barcode ?(.*)"))
+@friday.on(friday_on_cmd(pattern="barcode ?(.*)"))
 @friday.on(sudo_cmd(pattern="barcode ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:

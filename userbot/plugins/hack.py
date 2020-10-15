@@ -5,10 +5,10 @@ import asyncio
 
 from telethon import events
 from telethon.tl.functions.users import GetFullUserRequest
-from uniborg.util import admin_cmd
+from uniborg.util import friday_on_cmd
 
 
-@friday.on(admin_cmd(pattern=r"hack"))
+@friday.on(friday_on_cmd(pattern=r"hack"))
 async def _(event):
     if event.fwd_from:
         return

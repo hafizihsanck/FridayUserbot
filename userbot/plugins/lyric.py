@@ -7,14 +7,14 @@ import lyricsgenius
 from tswift import Song
 
 from userbot import CMD_HELP
-from userbot.utils import admin_cmd
+from userbot.utils import friday_on_cmd
 from userbot.utils import edit_or_reply
 from userbot.utils import sudo_cmd
 
 GENIUS = os.environ.get("GENIUS_API_TOKEN", None)
 
 
-@friday.on(admin_cmd(outgoing=True, pattern="lyrics (.*)"))
+@friday.on(friday_on_cmd(outgoing=True, pattern="lyrics (.*)"))
 @friday.on(sudo_cmd(pattern="lyrics (.*)", allow_sudo=True))
 async def _(event):
     await edit_or_reply(event, "Searching For Lyrics.....")
@@ -56,7 +56,7 @@ async def _(event):
         await edit_or_reply(event, reply)
 
 
-@friday.on(admin_cmd(outgoing=True, pattern="glyrics(?: |$)(.*)"))
+@friday.on(friday_on_cmd(outgoing=True, pattern="glyrics(?: |$)(.*)"))
 async def lyrics(lyric):
     if r"-" in lyric.text:
         pass

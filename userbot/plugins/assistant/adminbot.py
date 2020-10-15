@@ -37,7 +37,7 @@ from userbot import BOTLOG_CHATID
 from userbot import CMD_HELP
 from userbot import Lastupdate
 from userbot.uniborgConfig import Config
-from userbot.utils import admin_cmd
+from userbot.utils import friday_on_cmd
 from userbot.utils import edit_or_reply
 from userbot.utils import errors_handler
 from userbot.utils import register
